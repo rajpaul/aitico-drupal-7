@@ -1,43 +1,0 @@
-10
-
-dir
-655
-http://subversion-bd.dhaka.codemate.com/svn/aitico-drupal/trunk/src/sites/all/modules/custom
-http://subversion-bd.dhaka.codemate.com/svn/aitico-drupal
-
-
-
-2013-12-18T07:27:02.888530Z
-653
-rajpaul
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-53752612-9b7d-4392-8a0f-ac121a87f235
-
-aitico_main
-dir
-
-aitico_core
-dir
-
-aitico_api
-dir
-
-aitico_job
-dir
-
-aitico_ui
-dir
-

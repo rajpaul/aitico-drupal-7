@@ -1,0 +1,65 @@
+<div class="schedule-view">
+    <h2><?php print t('Scheduled file updates');?>: 
+        <span class="blue"><?php print t($company_title); ?> - <?php print t($site_title); ?> - <?php print t($cst_title); ?></span></h2>
+    <label class="select-group" for="group-select"><?php print t('Select group'); ?></label>
+    <select id="group-select">
+        <?php if(isset($group_lists)):?>
+        <?php foreach($group_lists as $group):?>
+        <option value="<?php print $group->nid;?>"><?php print t($group->title);?></option>
+        <?php endforeach; ?>
+        <?php endif; ?>
+<!--        <option>Wallpapers</option>
+        <option>Wallpapers 2</option>
+        <option>Wallpapers 3</option>
+        <option>Wallpapers 4</option>
+        <option>Wallpapers 6</option>-->
+    </select>
+    <table class="table table-bordered table-hover" id="schedule-table">
+        <thead>
+            <tr>
+                <th class="span4"><?php print t('Date of the update'); ?></th>
+                <th><?php print t('Slot 1');?></th>
+                <th><?php print t('Slot 2');?></th>
+                <th><?php print t('Slot 3');?></th>
+                <th><?php print t('Slot 4');?></th>
+                <th><?php print t('Slot 5');?></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>04/21/2013 14:00</td>
+                <td><input type="file" id="id-input-file-11" accept="image/gif, image/jpeg, image/png"/><span class="label label-large file-type">Image</span></td>
+                <td><input type="file" id="id-input-file-12" accept=".pdf"/><span class="label label-large file-type">PDF</span></td>
+                <td><input type="file" id="id-input-file-13" accept=".pdf"/><span class="label label-large file-type">PDF</span></td>
+                <td><input type="file" id="id-input-file-14" accept="image/gif, image/jpeg, image/png"/><span class="label label-large file-type">Image</span></td>
+                <td><input type="file" id="id-input-file-15" accept=".pdf"/><span class="label label-large file-type">PDF</span></td>
+            </tr>
+            <tr>
+                <td>04/21/2013 14:00</td>
+                <td><input type="file" id="id-input-file-21" accept="image/gif, image/jpeg, image/png"/><span class="label label-large file-type">Image</span></td>
+                <td><input type="file" id="id-input-file-22" accept=".pdf"/><span class="label label-large file-type">PDF</span></td>
+                <td><input type="file" id="id-input-file-23" accept=".pdf"/><span class="label label-large file-type">PDF</span></td>
+                <td><input type="file" id="id-input-file-24" accept="image/gif, image/jpeg, image/png"/><span class="label label-large file-type">Image</span></td>
+                <td><input type="file" id="id-input-file-25" accept=".pdf"/><span class="label label-large file-type">PDF</span></td>
+            </tr>
+            <tr>
+                <td>04/21/2013 14:00</td>
+                <td><input type="file" id="id-input-file-31" accept="image/gif, image/jpeg, image/png"/><span class="label label-large file-type">Image</span></td>
+                <td><input type="file" id="id-input-file-32" accept=".pdf"/><span class="label label-large file-type">PDF</span></td>
+                <td><input type="file" id="id-input-file-33" accept=".pdf"/><span class="label label-large file-type">PDF</span></td>
+                <td><input type="file" id="id-input-file-34" accept="image/gif, image/jpeg, image/png"/><span class="label label-large file-type">Image</span></td>
+                <td><input type="file" id="id-input-file-35" accept=".pdf"/><span class="label label-large file-type">PDF</span></td>
+            </tr>
+            <tr>
+                <td><input id="schedule-date" type="text" class="input-small"/><div class="bootstrap-timepicker"><input id="schedule-time" type="text" class="input-small"/></div></td>
+                <td><input type="file" id="id-input-file-41" accept="image/gif, image/jpeg, image/png"/><span class="label label-large file-type">Image</span></td>
+                <td><input type="file" id="id-input-file-42" accept=".pdf"/><span class="label label-large file-type">PDF</span></td>
+                <td><input type="file" id="id-input-file-43" accept=".pdf"/><span class="label label-large file-type">PDF</span></td>
+                <td><input type="file" id="id-input-file-44" accept="image/gif, image/jpeg, image/png"/><span class="label label-large file-type">Image</span></td>
+                <td><input type="file" id="id-input-file-45" accept=".pdf"/><span class="label label-large file-type">PDF</span></td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="#" class="btn btn-grey">Remove selected update</a>
+    <a href="#" class="btn btn-primary">Add scheduled update</a>
+</div><!--/log-->

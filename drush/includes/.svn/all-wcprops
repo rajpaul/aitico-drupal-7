@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/includes
+END
+drupal.inc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/includes/drupal.inc
+END
+backend.inc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/includes/backend.inc
+END
+dbtng.inc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/includes/dbtng.inc
+END
+output.inc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/includes/output.inc
+END
+cache.inc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/includes/cache.inc
+END
+environment.inc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/includes/environment.inc
+END
+complete.inc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/includes/complete.inc
+END
+bootstrap.inc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/includes/bootstrap.inc
+END
+sitealias.inc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/includes/sitealias.inc
+END
+command.inc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/includes/command.inc
+END
+batch.inc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/includes/batch.inc
+END
+filesystem.inc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/includes/filesystem.inc
+END
+exec.inc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/includes/exec.inc
+END
+context.inc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/includes/context.inc
+END
+drush.inc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/includes/drush.inc
+END

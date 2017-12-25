@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/aitico-drupal/!svn/ver/478/trunk/src/sites/all/modules/contrib/delete_all
+END
+delete_all.module
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/aitico-drupal/!svn/ver/478/trunk/src/sites/all/modules/contrib/delete_all/delete_all.module
+END
+LICENSE.txt
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/aitico-drupal/!svn/ver/478/trunk/src/sites/all/modules/contrib/delete_all/LICENSE.txt
+END
+delete_all.info
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/aitico-drupal/!svn/ver/478/trunk/src/sites/all/modules/contrib/delete_all/delete_all.info
+END
+delete_all.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/aitico-drupal/!svn/ver/478/trunk/src/sites/all/modules/contrib/delete_all/delete_all.js
+END
+delete_all.drush.inc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/aitico-drupal/!svn/ver/478/trunk/src/sites/all/modules/contrib/delete_all/delete_all.drush.inc
+END

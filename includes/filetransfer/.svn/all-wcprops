@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/aitico-drupal/!svn/ver/3/trunk/src/includes/filetransfer
+END
+filetransfer.inc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/aitico-drupal/!svn/ver/3/trunk/src/includes/filetransfer/filetransfer.inc
+END
+ftp.inc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/aitico-drupal/!svn/ver/3/trunk/src/includes/filetransfer/ftp.inc
+END
+local.inc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/aitico-drupal/!svn/ver/3/trunk/src/includes/filetransfer/local.inc
+END
+ssh.inc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/aitico-drupal/!svn/ver/3/trunk/src/includes/filetransfer/ssh.inc
+END

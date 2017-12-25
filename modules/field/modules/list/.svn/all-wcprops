@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/field/modules/list
+END
+list.module
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/field/modules/list/list.module
+END
+list.install
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/field/modules/list/list.install
+END
+list.info
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/field/modules/list/list.info
+END

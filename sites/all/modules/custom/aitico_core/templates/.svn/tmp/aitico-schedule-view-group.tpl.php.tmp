@@ -1,0 +1,35 @@
+<thead>
+    <tr>
+        <th class="span4"><?php print t('Date of the update'); ?></th>
+        <?php for ($i = 1; $i <= $slot_number; $i++): ?>
+            <th><?php print t('Slot ') . $i; ?></th>
+        <?php endfor; ?>
+    </tr>
+</thead>
+<tbody>
+    <?php foreach ($schedule_info as $key => $val): ?>
+        <tr nid="<?php print $key;?>" class="schedule_files">
+            <?php
+            list($date, $time) = explode('|', date('d/m/Y|H:i', $val['schedule_time']));
+            ?>
+            <td><input type="text" class="input-small schedule-date" id="schedule-date-<?php print $key;?>" value="<?php print $date; ?>"/>
+                <div class="bootstrap-timepicker">
+                    <input  type="text" class="input-small schedule-time" id="schedule-time-<?php print $key;?>" value="<?php print $time; ?>"/>
+                </div>
+            </td>
+            <?php foreach ($val['files_info'] as $row): ?>
+                <td> <?php
+                $file_schedule_id = $key;
+                $file_slot_id = $row->parent_slot_id;
+                $file_slot_node = node_load($file_slot_id);
+                $slot_file_type = $file_slot_node->field_file_type['und'][0]['value'];
+                $file_node = get_files_node($file_slot_id, FILE_TYPE_CODE_SCHEDULE, $file_schedule_id);
+                $files_form = get_aitico_node_form('files', $file_slot_id, $file_node);
+                $form = render($files_form);
+                print $form;
+                 
+                ?></td>
+            <?php endforeach; ?>
+        </tr>
+    <?php endforeach; ?>
+</tbody>

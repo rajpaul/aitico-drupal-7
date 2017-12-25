@@ -1,0 +1,7 @@
+name = Aitico HTTP API
+description = Aitico HTTP API
+package = aitico
+version = 1.0
+core = 7.x
+
+files[] = models/aitico_api.php

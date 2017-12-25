@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/aitico-drupal/!svn/ver/652/trunk/src/sites/all/modules/custom/aitico_core/templates
+END
+aitico-admin-action-logo.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/aitico-drupal/!svn/ver/102/trunk/src/sites/all/modules/custom/aitico_core/templates/aitico-admin-action-logo.tpl.php
+END
+company-form.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/aitico-drupal/!svn/ver/29/trunk/src/sites/all/modules/custom/aitico_core/templates/company-form.tpl.php
+END
+company-user-header.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/aitico-drupal/!svn/ver/74/trunk/src/sites/all/modules/custom/aitico_core/templates/company-user-header.tpl.php
+END
+aitico-admin-page.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/aitico-drupal/!svn/ver/102/trunk/src/sites/all/modules/custom/aitico_core/templates/aitico-admin-page.tpl.php
+END
+aitico-admin-action-users.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/aitico-drupal/!svn/ver/534/trunk/src/sites/all/modules/custom/aitico_core/templates/aitico-admin-action-users.tpl.php
+END
+aitico-admin-action-files.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/aitico-drupal/!svn/ver/624/trunk/src/sites/all/modules/custom/aitico_core/templates/aitico-admin-action-files.tpl.php
+END
+aitico-admin-action.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/aitico-drupal/!svn/ver/572/trunk/src/sites/all/modules/custom/aitico_core/templates/aitico-admin-action.tpl.php
+END
+aitico-admin-action-logs.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/aitico-drupal/!svn/ver/535/trunk/src/sites/all/modules/custom/aitico_core/templates/aitico-admin-action-logs.tpl.php
+END
+aitico-admin-action-file-admin.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/aitico-drupal/!svn/ver/439/trunk/src/sites/all/modules/custom/aitico_core/templates/aitico-admin-action-file-admin.tpl.php
+END
+aitico-admin-system-users.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/aitico-drupal/!svn/ver/558/trunk/src/sites/all/modules/custom/aitico_core/templates/aitico-admin-system-users.tpl.php
+END
+company-list.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/aitico-drupal/!svn/ver/589/trunk/src/sites/all/modules/custom/aitico_core/templates/company-list.tpl.php
+END
+aitico-logs-view.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/aitico-drupal/!svn/ver/634/trunk/src/sites/all/modules/custom/aitico_core/templates/aitico-logs-view.tpl.php
+END
+content-entry-page.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/aitico-drupal/!svn/ver/20/trunk/src/sites/all/modules/custom/aitico_core/templates/content-entry-page.tpl.php
+END
+aitico-core-right-page.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/aitico-drupal/!svn/ver/571/trunk/src/sites/all/modules/custom/aitico_core/templates/aitico-core-right-page.tpl.php
+END
+aitico-company-list.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/aitico-drupal/!svn/ver/652/trunk/src/sites/all/modules/custom/aitico_core/templates/aitico-company-list.tpl.php
+END
+files-node-form.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/aitico-drupal/!svn/ver/613/trunk/src/sites/all/modules/custom/aitico_core/templates/files-node-form.tpl.php
+END
+user-list.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/aitico-drupal/!svn/ver/105/trunk/src/sites/all/modules/custom/aitico_core/templates/user-list.tpl.php
+END
+aitico-core-schedule.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/aitico-drupal/!svn/ver/638/trunk/src/sites/all/modules/custom/aitico_core/templates/aitico-core-schedule.tpl.php
+END
+aitico-core-rent-pin.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/aitico-drupal/!svn/ver/219/trunk/src/sites/all/modules/custom/aitico_core/templates/aitico-core-rent-pin.tpl.php
+END
+aitico-admin-action-edit-device.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/aitico-drupal/!svn/ver/635/trunk/src/sites/all/modules/custom/aitico_core/templates/aitico-admin-action-edit-device.tpl.php
+END
+aitico-admin-action-devices.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/aitico-drupal/!svn/ver/533/trunk/src/sites/all/modules/custom/aitico_core/templates/aitico-admin-action-devices.tpl.php
+END
+aitico-core-system-page.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/aitico-drupal/!svn/ver/571/trunk/src/sites/all/modules/custom/aitico_core/templates/aitico-core-system-page.tpl.php
+END
+aitico-admin-action-edit.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/aitico-drupal/!svn/ver/131/trunk/src/sites/all/modules/custom/aitico_core/templates/aitico-admin-action-edit.tpl.php
+END
+aitico-schedule-add-row.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/aitico-drupal/!svn/ver/368/trunk/src/sites/all/modules/custom/aitico_core/templates/aitico-schedule-add-row.tpl.php
+END
+aitico-help.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/aitico-drupal/!svn/ver/262/trunk/src/sites/all/modules/custom/aitico_core/templates/aitico-help.tpl.php
+END
+aitico-core-rent.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/aitico-drupal/!svn/ver/632/trunk/src/sites/all/modules/custom/aitico_core/templates/aitico-core-rent.tpl.php
+END
+aitico-schedule-view-group.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/aitico-drupal/!svn/ver/633/trunk/src/sites/all/modules/custom/aitico_core/templates/aitico-schedule-view-group.tpl.php
+END

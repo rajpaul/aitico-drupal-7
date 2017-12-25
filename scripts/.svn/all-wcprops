@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/aitico-drupal/!svn/ver/3/trunk/src/scripts
+END
+cron-lynx.sh
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/aitico-drupal/!svn/ver/3/trunk/src/scripts/cron-lynx.sh
+END
+generate-d6-content.sh
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/aitico-drupal/!svn/ver/3/trunk/src/scripts/generate-d6-content.sh
+END
+test.script
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/aitico-drupal/!svn/ver/3/trunk/src/scripts/test.script
+END
+code-clean.sh
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/aitico-drupal/!svn/ver/3/trunk/src/scripts/code-clean.sh
+END
+generate-d7-content.sh
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/aitico-drupal/!svn/ver/3/trunk/src/scripts/generate-d7-content.sh
+END
+dump-database-d6.sh
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/aitico-drupal/!svn/ver/3/trunk/src/scripts/dump-database-d6.sh
+END
+dump-database-d7.sh
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/aitico-drupal/!svn/ver/3/trunk/src/scripts/dump-database-d7.sh
+END
+password-hash.sh
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/aitico-drupal/!svn/ver/3/trunk/src/scripts/password-hash.sh
+END
+cron-curl.sh
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/aitico-drupal/!svn/ver/3/trunk/src/scripts/cron-curl.sh
+END
+run-tests.sh
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/aitico-drupal/!svn/ver/3/trunk/src/scripts/run-tests.sh
+END
+drupal.sh
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/aitico-drupal/!svn/ver/3/trunk/src/scripts/drupal.sh
+END

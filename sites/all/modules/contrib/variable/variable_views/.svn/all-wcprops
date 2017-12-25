@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/variable/variable_views
+END
+variable_views.views_default.inc
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/variable/variable_views/variable_views.views_default.inc
+END
+variable_views.info
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/variable/variable_views/variable_views.info
+END
+variable_views.module
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/variable/variable_views/variable_views.module
+END
+variable_views.views.inc
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/variable/variable_views/variable_views.views.inc
+END

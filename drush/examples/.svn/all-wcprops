@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/examples
+END
+xkcd.drush.inc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/examples/xkcd.drush.inc
+END
+sync_via_http.drush.inc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/examples/sync_via_http.drush.inc
+END
+example.make
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/examples/example.make
+END
+sandwich-nocolor.txt
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/examples/sandwich-nocolor.txt
+END
+example.aliases.drushrc.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/examples/example.aliases.drushrc.php
+END
+example.drushrc.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/examples/example.drushrc.php
+END
+sandwich-topic.txt
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/examples/sandwich-topic.txt
+END
+policy.drush.inc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/examples/policy.drush.inc
+END
+example.bashrc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/examples/example.bashrc
+END
+sandwich.drush.inc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/examples/sandwich.drush.inc
+END
+example.drush.ini
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/examples/example.drush.ini
+END
+helloworld.script
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/examples/helloworld.script
+END
+sandwich.txt
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/examples/sandwich.txt
+END
+sync_enable.drush.inc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/examples/sync_enable.drush.inc
+END

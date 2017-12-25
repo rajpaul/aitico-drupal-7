@@ -1,0 +1,183 @@
+<?php
+
+define('SUPER_CONTENT_ADMIN_RID', 5);//Supercontent admin role ID
+define('CONTENT_ADMIN_RID', 7);//Content admin role ID
+
+
+/**
+ * Implementation of hook_cron().
+ */
+function aitico_job_cron() {
+    //get all cst id
+    $cst_id_sql = "SELECT nid FROM node WHERE type='charging_station'";
+    $cst_id_res = db_query($cst_id_sql)->fetchAll();
+    
+    $cst_id_arr = array();
+    
+    foreach($cst_id_res as $c_row){
+        $cst_id_arr[] = $c_row->nid;
+    }
+    $cst_id_lists = implode(',', $cst_id_arr);
+   
+    //get all file group id
+    $file_group_id_sql = "SELECT n.nid FROM {node} n ,{field_data_field_cst} cst 
+                          WHERE cst.entity_id = n.nid AND cst.field_cst_target_id IN($cst_id_lists)";
+    $file_group_id_res = db_query($file_group_id_sql)->fetchAll();
+    
+    $file_group_id_arr = array();
+    
+    
+    /*
+     * User Role based query
+     */
+    
+    
+    
+    
+    foreach ($file_group_id_res as $f_row) {
+        $file_group_id_arr[] = $f_row->nid;
+        $file_group_id = $f_row->nid;
+        //get schedule id 
+        $sch_ids = get_schedule_ids_by_group($file_group_id);
+        
+        //check schedule
+        foreach ($sch_ids as $sch_id) {
+            $schedule = node_load($sch_id);
+            
+            $role_query = db_query("SELECT rid FROM {users_roles} WHERE uid = :uid" , array(':uid' => $schedule->uid))->fetch(); 
+    
+            //update group file id
+            if ($role_query->rid == CONTENT_ADMIN_RID){
+                $permission_code = 2;
+            }elseif($role_query->rid == SUPER_CONTENT_ADMIN_RID){
+                $permission_code = 1;
+            }
+            update_group_file_id($file_group_id , $permission_code);
+            //update schedule file id
+            update_schedule_file_id($sch_id);
+        }
+    }
+}
+
+/**
+ * Get schedule id by file group id
+ * 
+ * @param  $file_group_id
+ *   file group node ID
+ * 
+ * @return  $schedule_ids
+ *   schedule node ID's array 
+ * 
+ */
+function get_schedule_ids_by_group($file_group_id) {
+    //current time
+    $now = date('Y-m-d H:i:s');
+    $cur_timestamp = strtotime($now);
+    
+    //get schedule id 
+    $schedule_id_sql = "SELECT n.nid 
+                        FROM node n,field_data_field_parent_file_group fg,field_data_field_schedule_time st
+                        WHERE fg.entity_id = n.nid 
+                        AND st.entity_id = n.nid 
+                        AND st.field_schedule_time_value <= $cur_timestamp
+                        AND fg.field_parent_file_group_target_id = $file_group_id 
+                        ORDER BY st.field_schedule_time_value ASC";
+    $schedule_id_res = db_query($schedule_id_sql)->fetchAll();
+    $schedule_ids = array();
+    foreach($schedule_id_res as $res){
+        $schedule_ids[] = $res->nid;
+    }
+    //return schedule  ids
+    return $schedule_ids;
+}
+
+/**
+ * Update schedule files id,then delete schedule node
+ * 
+ * @param  $sch_id 
+ *   schedule node ID
+ * 
+ */
+function update_schedule_file_id($sch_id) {
+    //get schedule file id 
+    $sch_file_id_sql = "SELECT n.nid as schedule_file_id,n.type,
+                        fs.field_file_schedule_target_id as parent_schedule_id,
+                        field_slot_target_id as parent_slot_id                    
+                        FROM node n 
+                        LEFT JOIN field_data_field_file_schedule fs ON fs.entity_id = n.nid               
+                        LEFT JOIN field_data_field_slot sl ON sl.entity_id = n.nid               
+                        WHERE n.type = 'files' AND fs.field_file_schedule_target_id = $sch_id";
+
+    $sch_file_id_res = db_query($sch_file_id_sql)->fetchAll();
+
+    //schedule file id array
+    $sch_file_id_arr = array();
+    foreach ($sch_file_id_res as $sc_row) {
+        $sch_file_id_arr[] = $sc_row->schedule_file_id;
+    }
+
+    $files = node_load_multiple($sch_file_id_arr);
+
+    foreach ($files as $file) {
+        unset($file->field_file_schedule);
+        $file->field_file_type_code['und'][0]['value'] = 1;
+        node_save($file);
+    }
+    
+    //delete schedule node
+    node_delete($sch_id);
+    
+}
+/**
+ * Update file group files id
+ * 
+ * @param  $file_group_id
+ *   file group node ID
+ * 
+ * @param $permission_code
+ *   Check file slot permission for a user
+ *    
+ * 
+ */
+function update_group_file_id($file_group_id , $permission_code) {
+    global $user;
+//    $gr_file_id_sql = "SELECT n.nid as gr_file_id,n.type                                      
+//                        FROM field_data_field_filegroup fg,field_data_field_slot sl,node n
+//                        LEFT JOIN field_data_field_file_type_code fc ON fc.entity_id = n.nid 
+//                        WHERE sl.field_slot_target_id = fg.entity_id
+//                        AND fc.field_file_type_code_value = 1
+//                        AND sl.entity_id = n.nid                                 
+//                        AND n.type = 'files'
+//
+//                        AND fg.field_filegroup_target_id = $file_group_id";
+    
+    
+   
+    $gr_file_id_sql = "SELECT n.nid as gr_file_id,n.type                                      
+                        FROM field_data_field_filegroup fg,field_data_field_slot sl,
+                        field_data_field_permission p,node n
+                        LEFT JOIN field_data_field_file_type_code fc ON fc.entity_id = n.nid			 
+                        WHERE sl.field_slot_target_id = fg.entity_id
+                        AND fc.field_file_type_code_value = 1
+                        AND sl.entity_id = n.nid                                 
+                        AND n.type = 'files'
+                        AND p.entity_id = fg.entity_id and p.field_permission_value = $permission_code
+                        AND fg.field_filegroup_target_id = $file_group_id";
+
+    $gr_file_id_res = db_query($gr_file_id_sql)->fetchAll();
+
+    //file group file id array
+    $gr_file_id_arr = array();
+    foreach ($gr_file_id_res as $gr_row) {
+        $gr_file_id_arr[] = $gr_row->gr_file_id;
+    }
+
+    //update group file id 
+    if (!empty($gr_file_id_arr)) {
+        db_update('field_data_field_file_type_code')
+                ->fields(array('field_file_type_code_value' => 3))
+                ->condition('entity_id', $gr_file_id_arr, 'IN')
+                ->execute();
+    }
+}
+

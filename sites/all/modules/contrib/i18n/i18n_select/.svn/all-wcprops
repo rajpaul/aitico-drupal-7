@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_select
+END
+i18n_select.test
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_select/i18n_select.test
+END
+i18n_select.admin.inc
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_select/i18n_select.admin.inc
+END
+i18n_select.module
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_select/i18n_select.module
+END
+i18n_select.info
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_select/i18n_select.info
+END
+i18n_select.variable.inc
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_select/i18n_select.variable.inc
+END

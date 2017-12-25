@@ -1,0 +1,230 @@
+/*
+CODEMATE STYLES
+Presented by Henri Sorsa
+*/
+
+/* ==========================================================================
+   General rules
+   ========================================================================== */
+
+textarea {
+  resize: none;
+}
+
+#main-content.no-menu {
+    margin-left: 0px;
+}
+
+.widget-box {
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 0px;
+}
+
+.navbar-inverse .nav .active>a, .navbar-inverse .nav .active>a:hover, .navbar-inverse .nav .active>a:focus {
+    font-weight: bold;
+}
+
+.ace-nav>li>a, .ace-nav>li>span {
+    padding: 0 12px!important;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.range_inputs input[type="text"]{
+    border: 0px solid #fff;
+    background: #fff;
+    cursor: default;
+}
+
+/* ==========================================================================
+   Rent view
+   ========================================================================== */
+
+
+.charging-info.selected .widget-main{
+    background-color: #2283c5;
+    color: #fff;
+}
+
+.charging-info a {
+    color: #393939;
+}
+
+    .charging-info a:hover {
+        color: #393939;
+        text-decoration: none;
+    }
+
+    .charging-info .widget-main:hover, .charging-info:hover .widget-main {
+        background-color: #EFF2F4;
+        color: #000;
+    }
+
+    .charging-info.selected .widget-main:hover, .charging-info.selected:hover .widget-main{
+        background-color: #2283c5;
+        color: #fff;
+    }
+
+
+/* ==========================================================================
+   Admin view
+   ========================================================================== */
+
+
+#tab-users #tab-users-buttons {
+    margin-top: 10px;
+}
+
+#tab-files {
+    overflow: hidden;
+}
+
+    #tab-files .schedule-button {
+        margin-top: 10px;
+    }
+
+#tab-files {
+
+}
+
+    #tab-files .span2 {
+        position: relative;
+    }
+
+        #tab-files .span2 .label.file-type {
+            position: absolute;
+            bottom: 9px;
+            right: 0px;
+            border-radius: 0 0 3px 0;
+        }
+
+    #tab-files-admin .input-buttons {
+        visibility: hidden;
+    }
+
+        #tab-files-admin .group-items:hover .input-buttons {
+            visibility: visible;
+        }
+
+
+.charging-info .widget-main:hover, .charging-info:hover .widget-main {
+        background-color: #EFF2F4;
+        color: #000;
+    }
+
+    table tbody tr.selected td:hover, table tbody tr.selected:hover td{
+        background-color: #2283c5;
+        color: #fff;
+    }
+
+table tbody tr.selected td, .table-striped tbody tr.selected td {
+    background-color: #2283c5;
+    color: #fff;
+}
+
+/* ==========================================================================
+   Schedule view
+   ========================================================================== */
+
+
+.schedule-view {
+
+}
+
+    .schedule-view .select-group {
+        top: -2px;
+        position: relative;
+        display: inline-block;
+    }
+
+    .schedule-view .bootstrap-timepicker {
+        display: inline-block;
+        margin-left: 4px;
+    }
+
+    #schedule-table td {
+        position: relative;
+    }
+
+    #schedule-table .ace-file-input .remove {
+        z-index: 2;
+    }
+
+    .label.file-type {
+        position: absolute;
+        bottom: 17px;
+        right: 8px;
+        border-radius: 0 0 3px 0;
+    }
+
+
+/* ==========================================================================
+   Badges for the admin table
+   ========================================================================== */
+
+
+.table .badge {
+    padding: .2em .4em;
+}
+
+
+/* ==========================================================================
+   Widget fixes
+   ========================================================================== */
+
+
+.bootstrap-timepicker-widget table td {
+    background: #fff;
+    border: 0px solid #fff;
+}
+
+ .table-hover .bootstrap-timepicker-widget tbody tr:hover td, .table-hover .bootstrap-timepicker-widget tbody tr:hover th {
+    background: #fff;
+}
+
+ table .bootstrap-timepicker-widget tbody tr td, table .bootstrap-timepicker-widget tbody tr th {
+    background: #fff !important;
+}
+
+
+/* ==========================================================================
+   Media queries
+   ========================================================================== */
+
+@media (max-width: 480px) {
+    .navbar .nav {
+        margin: 0;
+    }
+}
+
+@media (max-width: 767px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+}
+
+@media (max-width: 979px) {
+
+}
+
+@media (min-width: 979px) {
+    .schedule-view {
+        overflow-x: hidden;
+    }
+}
+
+@media (min-width: 1200px) {
+
+}
+
+.tab-content{
+   height: 460px;
+   overflow: auto;
+}

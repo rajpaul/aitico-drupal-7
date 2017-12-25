@@ -1,0 +1,203 @@
+(function($){
+    $(document).ready(function(){
+       
+        $("#delete-node").hide();
+         $("#tree_url").hide();
+      
+        $(".tree_table tr").click(function(){
+          
+            $("#delete-node").show();          
+//            if($(this).hasClass("active")){
+//                $(this).removeClass("selected");
+//                $(this).removeClass("active");
+//                $("#tree_url").text("Add Company");
+//                $("#tree_url").attr("href", "administration/company/add");
+//                $("#delete-node").hide();
+//                return;
+//            }
+          
+            $(".tree_table tr").removeClass("active");         
+            $(this).addClass("active");
+          
+            var type = $(this).attr("type");            
+            var nid = $(this).attr("nid");
+            var company_id = 0;
+            var site_id = 0;
+            var cst_id = 0;
+            if(type == 'company'){
+                company_id = nid;
+            }else if (type == 'site'){
+                site_id = nid;
+                company_id = $(this).data('tt-parent-id');
+            }else if (type == 'charging_station'){                 
+                company_id = $(this).prevAll("tr.company:first").attr("nid");                                
+                cst_id = nid;
+                site_id = $(this).data('tt-parent-id');
+            }
+
+            $(this).find('span.ajax_link a.use-ajax').attr("href", "/administration/info/" + type +"/"+company_id);
+            $(this).find('span.ajax_link a.use-ajax').trigger('click');
+            $('#admin-action').show();
+//            $('ul#myTab').children().show(); 
+//            $("#admin-action #myTab li").removeClass("active");
+//            $("#admin-action #myTab li:eq(0)").addClass("active");                                  
+            $("#tree_url").show();
+            $("#delete-node").show();              
+            if(type == "company"){
+                $("#tree_url").text("Add Site");
+                $("#tree_url").attr("href", "/administration/site/add/"+nid);
+                $("#delete-node").text("Delete Company");
+                $("#delete-node").attr("href", "/administration/company/remove/"+nid);
+            }
+            else if(type == "site"){
+                $("#tree_url").text("Add Charging Station");
+                $("#tree_url").attr("href", "/administration/cst/add/"+nid);
+                $("#delete-node").text("Delete Site");
+                $("#delete-node").attr("href", "/administration/site/remove/"+nid);
+            }
+            else if(type == "charging_station"){
+                $("#tree_url").hide();
+                $("#delete-node").text("Delete Charging Station");
+                $("#delete-node").attr("href", "/administration/cst/remove/"+nid);
+            }
+            else if (type == "device"){
+                $("#tree_url").hide();
+                $("#delete-node").hide();
+                $("#tab-group").hide();
+            }             
+        });
+        
+        
+        //User table js action
+        $("#usertable tr").live('click',  function(){
+            if($(this).hasClass("active")){
+                $(this).removeClass("selected");
+                $(this).removeClass("active");               
+                return;
+            }
+          
+            $("#usertable tr").removeClass("active");   
+            $("#usertable tr").removeClass("selected");   
+            $(this).addClass("active");
+            $(this).addClass("selected");
+            
+            
+            if(!$('#usertable tr td').is('.dataTables_empty')){
+                $('#user-delete').attr('href','/user/'+$(this).data('user-id')+'/cancel');
+                $('#user-edit').attr('href','/administration/user/edit/'+$(this).data('user-id'));
+                if($("#usertable").has('thead')){
+                    $('#tab-users-buttons #user-edit').show();
+                    $('#tab-users-buttons #user-delete').show();  
+                }
+            }      
+    
+        });  
+        
+
+        $("#rent-button").bind("click" , function(){
+            var description = $("#form-description").val();
+            var duration = $("#duration").val();
+            var rent_url =$("#rent-info").data("cst-url"); 
+            $.ajax({
+                url:  rent_url,
+                type: 'POST',
+                data: {
+                    'description' : description ,
+                    'duration' : duration
+                },                   
+                success: function(data) {
+                    $("#show-pin").text(data);
+                }
+                    
+            });
+        });    
+            
+            
+    });
+       
+            
+    Drupal.behaviors.fileUpload = {
+        attach: function (context, settings) {
+
+            $('#tab-files input[type=file]').ace_file_input({
+                style:'well',/** for making it like the larger file input in the example */
+                no_file:'No File ...',
+                btn_choose:'Choose',
+                btn_change:'Change',
+                thumbnail:'large',
+                no_icon:'icon-cloud-upload'
+            }).on('change', function(){
+                var files = $(this).data('ace_input_files');                                 
+              //  $("#upload-file").find("#file-upload-form a.use-ajax").trigger('click');
+//              $parent = $(this).closest('.form-item');
+              setTimeout(function() {                  
+                    $(this).find('input.form-submit[value=Upload]').mousedown();                  
+                }, 100);
+             
+            });  
+        }
+    } 
+    
+    Drupal.behaviors.searchLog = {
+        attach: function (context, settings) { 
+            $('#search_logs').attr('disabled','disabled');
+
+            $('#id-date-range-picker-1').daterangepicker({
+                ranges: {
+                    'Today': ['today', 'today'],
+                    'Yesterday': ['yesterday', 'yesterday'],
+                    'Last 7 Days': [Date.today().add({
+                        days: -6
+                    }), 'today']
+                //  'Last 30 Days': [Date.today().add({ days: -29 }), 'today'],
+                //  'This Month': [Date.today().moveToFirstDayOfMonth(), Date.today().moveToLastDayOfMonth()],
+                //  'Last Month': [Date.today().moveToFirstDayOfMonth().add({ months: -1 }), Date.today().moveToFirstDayOfMonth().add({ days: -1 })]
+                }
+            },
+            function(start, end) {
+                $('#search_logs').removeAttr('disabled');
+            }
+            );
+        }
+    }
+    
+    
+    
+    Drupal.behaviors.system = {
+        attach: function (context, settings) { 
+            $("#system-node").click(function(){
+                $('#admin-action').show();
+            });
+        }
+    }  
+   
+})(jQuery);
+
+
+function test_keep_alive_api(){
+    var json = json_string;
+    var hash = md5_hash;
+    jQuery.post('/api/keep-alive', {
+        data:json, 
+        hash:hash
+    }, function(data) {
+        console.log(data);
+    });
+}
+
+function test_get_permission_api(){
+    
+    var pin = pin_code;
+    var device_id = device;
+    var cst_id = cst;
+    var hash = md5_hash;
+    
+    jQuery.get('/api/get-permission', {
+        pincode:pin, 
+        device:device_id, 
+        cstid:cst_id, 
+        hash:hash
+    }, function(data) {
+        console.log(data);
+    });
+}

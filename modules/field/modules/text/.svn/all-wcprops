@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/field/modules/text
+END
+text.test
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/field/modules/text/text.test
+END
+text.module
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/field/modules/text/text.module
+END
+text.install
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/field/modules/text/text.install
+END
+text.info
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/field/modules/text/text.info
+END
+text.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/field/modules/text/text.js
+END

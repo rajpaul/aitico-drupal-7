@@ -1,0 +1,238 @@
+<?php
+
+require_once(DRUPAL_ROOT . "/modules/node/node.pages.inc");
+
+/* ------------------------------------------------------------------------------
+  Common hooks
+  ------------------------------------------------------------------------------ */
+
+/**
+ * Implements hook_init
+ */
+function aitico_ui_init() {
+    // Redirect to https for everything except API calls and CLI commands
+<<<<<<< .mine
+  /*  if (!drupal_is_cli() && !$GLOBALS['is_https'] && !preg_match('#^api/#i', request_path())) {
+=======
+    /*if (!drupal_is_cli() && !$GLOBALS['is_https'] && !preg_match('#^api/#i', request_path())) {
+>>>>>>> .r522
+        $https_path = preg_replace('#^http:#i', 'https:', $GLOBALS['base_url']) . $GLOBALS['base_path'] . request_path();
+        drupal_goto($https_path, array(), 301);
+    }*/
+}
+
+/**
+ * Implements hook_permission
+ */
+function aitico_ui_permission() {
+    return array(
+        'PAGE_RENT' => array(
+            'title' => t('Rent Page'),
+            'description' => t('View Rent Page')
+        ),
+        'PAGE_ADMINISTRATION' => array(
+            'title' => t('Administration Page'),
+            'description' => t('View Administration Page')
+        ),
+        'PAGE_HELP' => array(
+            'title' => t('Help Page'),
+            'description' => t('View Help Page')
+        ),
+        'PAGE_SETTINGS' => array(
+            'title' => t('Settings Page'),
+            'description' => t('View Settings Page')
+        ),
+    );
+}
+
+/**
+ * Implements hook_theme().
+ *
+ * @param $existing
+ * @param $type
+ * @param $theme
+ * @param $path
+ * @return array
+ */
+function aitico_ui_theme($existing, $type, $theme, $path) {
+    return array(
+        'aitico-header' => array(
+            'variables' => array(),
+            'template' => 'aitico-header',
+            'path' => $path . '/templates',
+        ),
+        'aitico-footer' => array(
+            'variables' => array(),
+            'template' => 'aitico-footer',
+            'path' => $path . '/templates',
+        ),
+        'aitico-user-menu' => array(
+            'variables' => array(
+                'company_logo' => drupal_get_path('theme', 'aitico') . '/assets/images/logo.png',
+            ),
+            'template' => 'aitico-user-menu',
+            'path' => $path . '/templates',
+        ),
+    );
+}
+
+/**
+ * Implements hook_menu().
+ *
+ * @return array
+ */
+function aitico_ui_menu() {
+    return array(
+        'rent' => array(
+            'title' => t('Rent'),            
+            'access arguments' => array('PAGE_RENT'),
+            'type' => MENU_NORMAL_ITEM,            
+            'menu_name' => 'aitico-main-menu',
+            'weight' => 0,
+        ),
+        'administration' => array(
+            'title' => t('Administration'),            
+            'access arguments' => array('PAGE_ADMINISTRATION'),
+            'type' => MENU_NORMAL_ITEM,
+            'menu_name' => 'aitico-main-menu',
+            'weight' => 1,
+           
+        ),
+        'help' => array(
+            'title' => t('Help'),            
+            'access arguments' => array('PAGE_HELP'),
+            'type' => MENU_NORMAL_ITEM,
+            'menu_name' => 'aitico-main-menu',
+            'weight' => 2,
+        ),
+        'settings' => array(
+            'title' => t('Settings'),            
+            'access arguments' => array('PAGE_SETTINGS'),
+            'type' => MENU_NORMAL_ITEM,
+            'menu_name' => 'aitico-main-menu',
+            'weight' => 3,
+        ),
+        'error-403' => array(
+            'page callback' => 'aitico_ui_403',
+            'file' => 'login-callbacks.php',
+            'file path' => drupal_get_path('module', 'aitico_ui') . '/page_callbacks',
+            'access callback' => TRUE,
+            'type' => MENU_CALLBACK,
+        ),
+        'error-404' => array(
+            'page callback' => 'aitico_ui_404',
+            'file' => 'login-callbacks.php',
+            'file path' => drupal_get_path('module', 'aitico_ui') . '/page_callbacks',
+            'access callback' => TRUE,
+            'type' => MENU_CALLBACK,
+        ),
+    );
+}
+
+/**
+ * Implements hook_menu_alter().
+ *
+ * @param $items
+ */
+function aitico_ui_menu_alter(&$items) {
+    $items['node']['page callback'] = 'aitico_ui_node_page';
+    $items['node']['file'] = 'login-callbacks.php';
+    $items['node']['file path'] = drupal_get_path('module', 'aitico_ui') . '/page_callbacks';
+}
+
+/**
+ * Implements hook_block_info().
+ *
+ * @return array
+ */
+function aitico_ui_block_info() {
+    return array(
+        'aitico-header' => array(
+            'info' => 'Aitico Header',
+            'cache' => DRUPAL_CACHE_GLOBAL,
+            'status' => 1,
+            'region' => 'header',
+        ),
+        'aitico-footer' => array(
+            'info' => 'Aitico Footer',
+            'cache' => DRUPAL_CACHE_GLOBAL,
+            'status' => 1,
+            'region' => 'footer',
+        ),
+        'aitico-user-menu' => array(
+            'info' => 'Aitico User Menu',
+            'cache' => DRUPAL_CACHE_PER_USER,
+            'status' => 1,
+            'region' => 'navigation',
+        ),
+    );
+}
+
+/**
+ * Implements hook_block_info_alter().
+ *
+ * @param $blocks
+ * @param $theme
+ * @param $code_blocks
+ * @return array
+ */
+function aitico_ui_block_info_alter(&$blocks, $theme, $code_blocks) {
+    if ($theme == 'aitico') {
+        $blocks['aitico_ui']['aitico-header']['status'] = 1;
+        $blocks['aitico_ui']['aitico-header']['region'] = 'header';
+
+        $blocks['aitico_ui']['aitico-footer']['status'] = 1;
+        $blocks['aitico_ui']['aitico-footer']['region'] = 'footer';
+
+        $blocks['menu']['aitico-main-menu']['status'] = 1;
+        $blocks['menu']['aitico-main-menu']['region'] = 'navigation';
+
+        $blocks['aitico_ui']['aitico-user-menu']['status'] = 1;
+        $blocks['aitico_ui']['aitico-user-menu']['region'] = 'navigation';
+
+        $blocks['system']['main']['status'] = 1;
+        $blocks['system']['main']['region'] = 'content';
+    }
+}
+
+/**
+ * Implements hook_block_view().
+ *
+ * @param string $delta
+ * @return array
+ */
+function aitico_ui_block_view($delta = '') {
+    global $user;
+
+    $block = array();
+    switch ($delta) {
+        case 'aitico-header':
+        case 'aitico-footer':
+            $block['content'] = array('#theme' => $delta);
+            break;
+
+        case 'aitico-user-menu':
+            if (user_is_logged_in())
+                $block['content'] = array(
+                    '#theme' => $delta,
+                    '#var_user' => user_load($user->uid),
+                );
+            break;
+    }
+
+    return $block;
+}
+
+/**
+ * Implements hook_form_alter().
+ *
+ * @param $form
+ * @param $form_state
+ * @param $form_id
+ * @return mixed
+ */
+function aitico_ui_form_user_login_alter(&$form, &$form_state, $form_id) {
+    $form['actions']['submit']['#suffix'] = '&nbsp;&nbsp;&nbsp;' . l(t('I forgot my password'), 'user/password');
+
+    return $form;
+}

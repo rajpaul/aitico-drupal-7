@@ -1,0 +1,67 @@
+<div class="tree-view span6">
+    <table class="table table-bordered table-condensed tree_table" id="example-basic">
+        <thead>
+            <tr>
+                <th><?php print t('Company'); ?></th>
+                <th><?php print t('Usage'); ?></th>
+                <th><?php print t('Count'); ?></th>
+                <th><?php print t('Hours'); ?></th>
+                <th><?php print t('Status'); ?></th>
+            </tr>
+        </thead> 
+        <tbody>
+            <?php
+
+            function _treeRender($nodes, $parent = null) { ?>
+                <?php foreach ($nodes as $key => $val): $node = node_load($key); ?>     
+        <?php if ($node): ?>
+                        <tr data-tt-id="<?php echo trim($key); ?>" <?php if ($parent): ?> data-tt-parent-id="<?php echo trim($parent); ?>" <?php endif; ?> type="<?php echo $node->type; ?>"  nid="<?php echo $node->nid; ?>"
+                            class =" <?php print $node->type; ?>"> 
+                            <td><?php echo $node->title; ?> </td>
+                            <td>
+                                <?php  echo isset($val["statistics"]['usageRate']) ? $val['statistics']['usageRate'].'%' : '' ; ?>
+                                <?php  echo isset($val["statistics"]['usageRateAlert']) ? $val['statistics']['usageRateAlert'] : '' ; ?>
+                            </td>  
+                            <td>
+                                <?php  echo isset($val["statistics"]['usageCount']) ? $val['statistics']['usageCount'] : '' ; ?>
+                                <?php  echo isset($val["statistics"]['usageCountAlert']) ? $val['statistics']['usageCountAlert'] : '' ; ?>
+                            </td>
+                            <td>
+                                <?php  echo isset($val["statistics"]['usageDuration']) ? $val['statistics']['usageDuration'] : '' ; ?>
+                                <?php  echo isset($val["statistics"]['usageDurationAlert']) ? $val['statistics']['usageDurationAlert'] : '' ; ?>
+                            </td>
+                            <td <?php  echo isset($val["status"]) ? $val['status']['cellClass'] : '' ; ?>>
+                            
+                                <?php  echo (isset($val["statistics"]['statusBubble']) and !isset($val["status"])) ? $val["statistics"]['statusBubble'] : '' ; ?>
+                                <?php  echo isset($val["status"]) ? $val['status']['statusIcon'] : '' ; ?>
+                                <?php  echo isset($val["status"]) ? $val['status']['statusText'] : '' ; ?>
+                            </td>
+                        </tr>  
+                    <?php endif; ?>
+                    <?php _treeRender($val["child"], $key); ?>
+                <?php endforeach; ?>
+            <?php }
+
+            _treeRender($nodes); ?>   
+        </tbody>
+    </table>
+    <div class="clearfix">
+        <a href="#" class="btn btn-small btn-grey" onclick="jQuery('#example-basic').treetable('collapseAll'); return false;">Collapse all</a>
+        <a href="#" class="btn btn-small btn-grey" onclick="jQuery('#example-basic').treetable('expandAll'); return false;">Expand all</a>
+
+        <span class="pull-right">
+            <!-- To add superadmin/super contentadmin-->
+            <?php if (user_access('CREATE_SUPERADMIN')):?>
+                <a href="/administration/user/new/0/0" id="user-node" class="btn btn-small btn-primary" data-toggle="modal">
+                    <?php print t('Add User');?>
+                </a>
+            <?php endif;?>
+            <a href="#" id="delete-node" class="btn btn-grey btn-small" data-toggle="modal">
+                <?php print t('Delete');?>
+            </a>
+            <a href="administration/company/add" id="tree_url" class="btn btn-small btn-primary">
+                <?php print t('Add company');?>
+            </a>
+        </span>
+    </div>
+</div>

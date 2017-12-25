@@ -1,0 +1,80 @@
+<div class="tree-view span6">
+    <table class="table table-bordered table-condensed tree_table" id="example-basic">
+        <thead>
+            <tr>
+                <th><?php print t('Company'); ?></th>
+                <th><?php print t('Usage'); ?></th>
+                <th><?php print t('Count'); ?></th>
+                <th><?php print t('Hours'); ?></th>
+                <th><?php print t('Status'); ?></th>
+            </tr>
+        </thead> 
+        <tbody>
+            <?php
+
+            function _treeRender($nodes, $parent = null) { ?>
+                <?php foreach ($nodes as $key => $val): $node = node_load($key); ?>     
+                    <?php if ($node): ?>
+                            <tr data-tt-id="<?php echo trim($key); ?>" <?php if ($parent): ?> data-tt-parent-id="<?php echo trim($parent); ?>" <?php endif; ?> type="<?php echo $node->type; ?>"  nid="<?php echo $node->nid; ?>"
+                                class =" <?php print $node->type; ?>"> 
+                                <td>
+                                    <?php
+                                    $title = l(t($node->title), "administration/info/" . $node->type . "/" . $node->nid, array('attributes' => array('class' => array('use-ajax'))));
+                                    print check_plain($node->title);
+                                    ?>                                    
+                                        <span style="display:none;" class="ajax_link">
+                                            <?php print $title; ?>
+                                        </span>                                    
+                                </td>
+                                <td>
+                                    <?php echo isset($val["statistics"]['usageRate']) ? $val['statistics']['usageRate'] . '%' : ''; ?>
+                                    <?php echo isset($val["statistics"]['usageRateAlert']) ? $val['statistics']['usageRateAlert'] : ''; ?>
+                                </td>  
+                                <td>
+                                    <?php echo isset($val["statistics"]['usageCount']) ? $val['statistics']['usageCount'] : ''; ?>
+                                    <?php echo isset($val["statistics"]['usageCountAlert']) ? $val['statistics']['usageCountAlert'] : ''; ?>
+                                </td>
+                                <td>
+                                    <?php echo isset($val["statistics"]['usageDuration']) ? $val['statistics']['usageDuration'] : ''; ?>
+                                    <?php echo isset($val["statistics"]['usageDurationAlert']) ? $val['statistics']['usageDurationAlert'] : ''; ?>
+                                </td>
+                                <td <?php echo isset($val["status"]) ? $val['status']['cellClass'] : ''; ?>>
+
+                                    <?php echo (isset($val["statistics"]['statusBubble']) and !isset($val["status"])) ? $val["statistics"]['statusBubble'] : ''; ?>
+                                    <?php echo isset($val["status"]) ? $val['status']['statusIcon'] : ''; ?>
+                                    <?php echo isset($val["status"]) ? $val['status']['statusText'] : ''; ?>
+                                    <?php echo isset($val["statistics"]["connectionAlert"]) ? $val['statistics']['connectionAlert'] : ''; ?>
+                                </td>
+                            </tr>                       
+                    <?php endif; ?>
+                    <?php _treeRender($val["child"], $key); ?>
+                <?php endforeach; ?>
+            <?php }
+
+            _treeRender($nodes); ?>   
+        </tbody>
+    </table>
+    <div class="clearfix">
+        <a href="#" class="btn btn-small btn-grey" onclick="jQuery('#example-basic').treetable('collapseAll'); return false;"><?php print t("Collapse all"); ?></a>
+        <a href="#" class="btn btn-small btn-grey" onclick="jQuery('#example-basic').treetable('expandAll'); return false;"><?php print t("Expand all");?></a>
+
+        <span class="pull-right">
+            <!-- To add superadmin/super contentadmin-->
+            <?php if (user_access('USER_MANAGE_SYSTEM')): ?>
+                <?php echo l(t('System'), "administration/system/user", array("attributes" => array("id" => "system-node", "class" => "btn btn-small btn-primary use-ajax"))); ?>
+            <?php endif; ?>
+            <?php if (user_access('COMPANY_MANAGE')): ?> 
+                <?php echo l(t('Add company'), "administration/company/add", array("attributes" => array("id" => "tree_url_company", "class" => "btn btn-small btn-primary"))); ?>
+
+                <?php echo l(t('Delete'), "#", array("attributes" => array("id" => "delete-node", "class" => "btn btn-grey btn-small"))); ?>
+
+                <?php echo l(t('Add company'), "administration/company/add", array("attributes" => array("id" => "tree_url", "class" => "btn btn-small btn-primary"))); ?>
+                
+            <?php endif; ?>
+            <?php if (aitico_core_device_view_access()): ?> 
+                <?php echo l(t('Delete Device'), "#", array("attributes" => array("id" => "delete-node-device", "class" => "btn btn-grey btn-small"))); ?>
+                <?php echo l(t('Add Device'), "administration/device/add", array("attributes" => array("id" => "tree_url_device", "class" => "btn btn-small btn-primary"))); ?>
+            <?php endif;?>
+        </span>
+    </div>
+</div>

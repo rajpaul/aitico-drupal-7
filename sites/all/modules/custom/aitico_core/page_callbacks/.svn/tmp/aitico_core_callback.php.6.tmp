@@ -1,0 +1,753 @@
+<?php
+
+
+/**
+ * Check access on company and site
+ * @param : company_id
+ * @param : site_id
+ * return : TRUE/FALSE
+ * 
+ */
+function aitico_core_access($company_id, $site_id) {
+    global $user;
+    if ($company_id != 0) {
+        $is_company_member = db_query("SELECT uid FROM {users_companies_sites} 
+                            WHERE uid = :uid AND cid = :cid", array(':uid' => $user->uid, ':cid' => $company_id))->fetch();
+
+        if (user_access('CREATE_SUPERADMIN') && user_access('CREATE_COMPANYADMIN')) {
+            return TRUE;
+        }
+
+        if ($site_id == 0) {
+            if (user_access('CREATE_COMPANYADMIN') && $is_company_member) {
+                return TRUE;
+            }
+        } else {
+            if (user_access('CREATE_OPERATOR') && $is_company_member) {
+                return TRUE;
+            }
+        }
+    } else {
+        if (user_access('CREATE_SUPERADMIN') && user_access('CREATE_SUPERCONTENTADMIN')) {
+            return TRUE;
+        }
+    }
+
+    return FALSE;
+}
+
+/**
+ * Add user form
+ * @return theme
+ */
+function add_user_form($companyId, $siteId=0) {
+    if (!aitico_core_access($companyId, $siteId)) {
+        drupal_access_denied();
+        return;
+    }
+    $user_form = render(drupal_get_form('aitico_core_user_form', $companyId, $siteId));
+    $title = "Edit User";
+    return theme('content_entry_page', array('form_title' => $title,
+                'node_add_form' => $user_form));
+}
+
+/**
+ * User edit form
+ * @param type $uid
+ */
+function edit_user_form($uid) {
+    $company_id = 0;
+    $site_id = 0;
+    $company_site = get_company_site_info($uid);
+    if (!empty($company_site)) {
+        $company_id = $company_site->cid;
+        $site_id = $company_site->sid;
+    }
+    if (!aitico_core_access($company_id, $site_id)) {
+        drupal_access_denied();
+        return;
+    }
+
+    $user = user_load($uid);
+    $title = "Edit User";
+    $user_form = render(drupal_get_form('aitico_core_user_edit_form', $user));
+    return theme('content_entry_page', array('form_title' => $title,
+                'node_add_form' => $user_form));
+}
+
+/**
+ *
+ * @param type $nid
+ * @return type 
+ * 
+ */
+function delete_aitico_node_form($node) {
+   // $node = node_load($nid);
+    $title = "Delete";
+    $form = drupal_get_form('node_delete_confirm', $node);
+    $node_edit_form = drupal_render($form);
+    return theme('content_entry_page', array('form_title' => $title, 'node_add_form' => $node_edit_form));
+}
+
+/**
+ *
+ * @param type $nid
+ * @return type 
+ * 
+ */
+function edit_aitico_node_form($node) {
+    
+    module_load_include('inc', 'node', 'node.pages');
+    $title = "Edit";
+    $form = drupal_get_form($node->type . '_node_form', $node);
+    $node_edit_form = drupal_render($form);
+    return theme('content_entry_page', array('form_title' => $title, 'node_add_form' => $node_edit_form));
+}
+
+/**
+ * Site form
+ * @return type 
+ */
+function add_site_form() {
+    $title = t("Add Site");
+    $node_type = 'site';
+    $site_form = get_aitico_node_form($node_type);
+    return theme('content_entry_page', array('form_title' => $title, 'node_add_form' => $site_form));
+}
+
+/**
+ * Charging station form
+ * @return type 
+ * 
+ */
+function add_charging_station_form() {
+    $title = t("Add Charging Station");
+    $node_type = 'charging_station';
+    $charging_station_form = get_aitico_node_form($node_type);
+    return theme('content_entry_page', array('form_title' => $title, 'node_add_form' => $charging_station_form));
+}
+
+/**
+ * Company form 
+ * 
+ * @return template
+ */
+function company_form($nid = null) {
+    $node_type = "company";
+    $form = get_aitico_node_form($node_type);
+
+    return theme('company_form', array('form' => $form));
+}
+
+/**
+ * Binding node form 
+ * 
+ * @global User $user
+ * @param node $node_type
+ * @return form
+ */
+function get_aitico_node_form($node_type) {
+    $node = new stdClass();
+    $form_id = $node_type . '_node_form';
+    global $user;
+
+    $node->uid = $user->uid;
+    $node->name = (isset($user->name) ? $user->name : '');
+    $node->type = $node_type;
+    $node->language = '';
+
+    node_object_prepare($node);
+    $form_output = render(drupal_get_form($form_id, $node));
+
+    return $form_output;
+}
+
+/**
+ * Add user form
+ * @param $form 
+ * @param &$form_state
+ */
+function aitico_core_user_form($form, &$form_state, $companyId, $siteId) {
+    global $user;
+    $form['#validate'][] = 'aitico_core_user_form_validate';
+    $form['#companyId'] = $companyId;
+    $form['#siteId'] = $siteId;
+    // Account information.
+    $form['account'] = array(
+        '#type' => 'container',
+        '#weight' => -10,
+    );
+    $form['account']['name'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Name'),
+        '#required' => TRUE,
+    );
+    $form['account']['mail'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Email'),
+        '#maxlength' => EMAIL_MAX_LENGTH,
+        '#required' => TRUE,
+    );
+
+    $form['account']['pass'] = array(
+        '#type' => 'password_confirm',
+        '#size' => 25,
+        '#required' => TRUE,
+    );
+
+    $options = getRoles($companyId, $siteId);
+    $form['account']['roles'] = array(
+        '#type' => 'select',
+        '#options' => $options,
+        '#title' => t('Roles'),
+        '#required' => TRUE,
+    );
+
+    $form['submit'] = array(
+        '#type' => 'submit',
+        '#value' => t('Save User'),
+    );
+
+    return $form;
+}
+
+/**
+ * Add user form
+ * @param $form
+ * @param $form_state
+ * @param $account
+ */
+function aitico_core_user_edit_form($form, &$form_state, $account) {
+    global $user;
+
+    $company_site = get_company_site_info($account->uid);
+    $company_id = 0;
+    $site_id = 0;
+    if (!empty($company_site)) {
+        $company_id = $company_site->cid;
+        $site_id = $company_site->sid;
+    }
+
+    $form['#account'] = $account;
+    $form_state['#account'] = $account;
+    // Account information.
+    $form['account'] = array(
+        '#type' => 'container',
+        '#weight' => -10,
+    );
+    $form['account']['name'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Name'),
+        '#required' => TRUE,
+        '#default_value' => ($account ? $account->name : ''),
+    );
+    $form['account']['mail'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Email'),
+        '#maxlength' => EMAIL_MAX_LENGTH,
+        '#required' => TRUE,
+        '#default_value' => ($account ? $account->mail : ''),
+    );
+
+    $form['account']['pass'] = array(
+        '#type' => 'password_confirm',
+        '#size' => 25,
+    );
+
+    $options = getRoles($company_id, $site_id);   
+    $form['account']['roles'] = array(
+        '#type' => 'select',
+        '#options' => $options,
+        '#title' => t('Roles'),
+        '#required' => TRUE,
+        '#default_value' => ($account ? array_keys($account->roles) : ''),
+    );
+
+    $form['submit'] = array(
+        '#type' => 'submit',
+        '#value' => t('Save User'),
+    );
+
+    return $form;
+}
+
+/**
+ * Password change form.
+ */
+function aitico_core_password_form($form, &$form_state, $account) {
+
+    global $user;
+    $form['#account'] = $account;
+    $form_state['#account'] = $account;
+    $form['#user'] = $account;
+    $current_pass_description = t('Enter your current password to change the  %pass.', array('%pass' => t('password')));
+
+    $form['account']['current_pass'] = array(
+        '#type' => 'password',
+        '#title' => t('Current password'),
+        '#size' => 25,
+        '#required' => TRUE,
+        '#description' => $current_pass_description,
+        '#attributes' => array('autocomplete' => 'off'),
+    );
+
+    $form['account']['pass'] = array(
+        '#type' => 'password_confirm',
+        '#size' => 25,
+        '#required' => TRUE,
+        '#description' => t('To change the current user password, enter the new password in both fields.'),
+    );
+
+    $form['submit'] = array(
+        '#type' => 'submit',
+        '#value' => t('Save'),
+    );
+
+    return $form;
+}
+
+/**
+ * Password Change
+ * @param type $uid
+ * @return type 
+ */
+function change_user_password() {
+    global $user;
+    $title = "Change Password";
+    // $account = user_load($uid);
+    $account = $user;
+    $form = drupal_get_form('aitico_core_password_form', $account);
+    $change_password_form = drupal_render($form);
+
+    return theme('content_entry_page', array('form_title' => $title, 'node_add_form' => $change_password_form));
+}
+
+/**
+ * 
+ * @global User $user
+ * @return $options
+ */
+function getRoles($company_id, $site_id) {
+    
+    global $user;
+    // the permissions list
+    $roles = array();
+    // now get all permissions of logged in user
+    $sql = "select rp.permission pr
+             from users u, users_roles ur, role r, role_permission rp 
+             where u.uid=ur.uid 
+             and ur.rid = r.rid 
+             and r.rid = rp.rid 
+             and r.rid !=2
+             and u.uid=" . $user->uid;
+    $rows = db_query($sql);
+
+    $roleNames = "";
+    foreach ($rows as $row) {
+        if ($company_id != 0) {
+            if ($site_id == 0) {
+                if ($row->pr == CREATE_COMPANYADMIN) {
+                    // get companyadmin role
+                    $roleNames = $roleNames . "'" . COMPANY_ADMIN . "'" . ',';
+                }
+                if ($row->pr == CREATE_CONTENTADMIN) {
+                    // get contentadmin role
+                    $roleNames = $roleNames . "'" . CONTENT_ADMIN . "'" . ',';
+                }
+            } else {
+                if ($row->pr == CREATE_OPERATOR) {
+                    // get operator role
+                    $roleNames = $roleNames . "'" . OPERATOR . "'" . ',';
+                }
+            }
+        } else {
+            if ($row->pr == CREATE_SUPERADMIN) {
+                // get superadmin role
+                $roleNames = $roleNames . "'" . SUPER_ADMIN . "'" . ',';
+            }
+            if ($row->pr == CREATE_SUPERCONTENTADMIN) {
+                // get supercontentadmin role
+                $roleNames = $roleNames . "'" . SUPER_CONTENTADMIN . "'" . ',';
+            }
+        }
+    }
+
+    $options = array();
+    if ($roleNames != "") {
+        $lastComa = strripos($roleNames, ",");
+        $roleNames = substr($roleNames, 0, $lastComa);
+        // now get the role list from db
+        $roleSql = "select rid, name 
+                    from role
+                    where name in (" . $roleNames . ")";
+        $roleRows = db_query($roleSql);
+        foreach ($roleRows as $row) {
+            $options[$row->rid] = t($row->name);
+        }
+    }
+
+    return $options;
+}
+
+
+/**
+ * Override of the standard user deletion page. Shows a confirmation box
+ * with the user profile visible underneath.
+ */
+function aitico_core_page_user_delete($account) {
+    $company_id = 0;
+    $site_id = 0;
+    $company_site = get_company_site_info($account->uid);
+    if (!empty($company_site)) {
+        $company_id = $company_site->cid;
+        $site_id = $company_site->sid;
+    }
+    if (!aitico_core_access($company_id, $site_id)) {
+        drupal_access_denied();
+        return;
+    }
+    module_load_include('inc', 'user', 'user.pages');
+    $title = "Delete User";    
+    return theme('content_entry_page', array('form_title' => $title, 'node_add_form' => render(drupal_get_form('user_cancel_confirm_form', $account))));
+}
+
+
+
+/**
+ * Language Change
+ * @param type $uid
+ * @return type
+ */
+function change_user_language() {
+    global $user;
+    $title = "Change Language";
+    // $account = user_load($uid);
+    $account = $user;
+
+    return 'TODO';
+}
+
+
+
+/**
+ * Get user list
+ * 
+ * @return template 
+ */
+function user_render($company_id, $site_id = null) {
+    //query for user list
+    $user_sql = "SELECT u.*,ucs.cid,ucs.sid,r.name as role 
+            FROM {users} u ,{users_companies_sites} ucs,{users_roles} ur,{role} r 
+            WHERE ucs.uid = u.uid AND ur.uid=u.uid AND ur.rid = r.rid AND ucs.cid = $company_id";
+    if (isset($site_id) && $site_id != "0") {
+        $user_sql .= " AND ucs.sid = $site_id";
+    }
+    $user_list = db_query($user_sql)->fetchAll(PDO::FETCH_ASSOC);
+
+    return $user_list;
+}
+
+/**
+ * Rendering tree node list view
+ * 
+ * @return template 
+ */
+function company_render() {
+    $model = get_model();
+    $nodes = $model->getTreeNode();
+    //return theme('company_template', array("nodes" => $nodes));
+    return $nodes;
+}
+
+
+
+/*
+ * Get company and site info based on user id 
+ * @param: user id 
+ * return : company and site info 
+ * * */
+
+function get_company_site_info($uid) {
+    $company_site = db_query("SELECT cid, sid FROM {users_companies_sites} WHERE uid =:uid", array(':uid' => $uid))->fetch();
+    return $company_site;
+}
+
+
+
+/*
+ * Implementation of admin page callback
+ */
+
+function aitio_core_admin_page() {
+    $company_list = theme('aitico-company-list', array('nodes' => company_render()));
+    $admin_action = theme('aitico-admin-action', array());
+    return theme('aitico-admin-page', array('company_list' => $company_list, 'admin_action' => $admin_action));
+}
+
+/*
+
+ * Implementation of admin action edit
+ * 
+ */
+
+function edit_admin_action($node) {
+    module_load_include('inc', 'node', 'node.pages');
+    $form = drupal_get_form($node->type . '_node_form', $node);
+    $form['#action'] = url('node/' . $node->nid . '/edit/' . $node->type);
+    $node_edit_form = drupal_render($form);
+
+    return theme('aitico-admin-action-edit', array('edit_node_form' => $node_edit_form));
+}
+
+/*
+ * Implementation of admin action files
+ * 
+ */
+
+function get_files_admin_action() {
+    return theme('aitico-admin-action-files', array());
+}
+
+/*
+ * Implementation of admin action file admin
+ * 
+ */
+
+function admin_file_admin_action() {
+    return theme('aitico-admin-action-file-admin', array());
+}
+
+/*
+ * Implementation of admin action user list
+ * 
+ */
+
+function get_users_admin_action($company_id, $site_id) {
+    $user_lists = user_render($company_id, $site_id);
+    return theme('aitico-admin-action-users', array(
+                'user_lists' => $user_lists,
+                'company_id' => $company_id,
+                'site_id' => $site_id,
+            ));
+}
+
+/*
+ * Implementation of admin action logs
+ * 
+ */
+
+function get_logs_admin_action($company_id, $site_id, $cst_id) {
+    return theme('aitico-admin-action-logs', array(
+                'company_id' => $company_id,
+                'site_id' => $site_id,
+                'cst_id' => $cst_id
+            ));
+}
+
+/**
+ * Implementation of logs view page
+ * 
+ */
+function get_all_log_info() {
+
+    $company_id = arg(2);
+    $site_id = arg(3);
+    $cst_id = arg(4);
+
+    $company_node = node_load($company_id);
+    $company_name = $company_node->title;
+    if ($site_id != 0) {
+        $site_node = node_load($site_id);
+        $site_name = $site_node->title;
+    } else {
+        $site_name = '';
+    }
+    if ($cst_id != 0) {
+        $cst_node = node_load($cst_id);
+        $cst_name = $cst_node->title;
+    } else {
+        $cst_name = '';
+    }
+
+    $date_range = $_GET['date-range-picker'];
+    $date_range_arr = explode('-', $date_range);
+
+    $acquired_time = $date_range_arr[0];
+    $acquired_time_val = strtotime($acquired_time);
+
+    $returned_time = $date_range_arr[1];
+    $returned_time_val = strtotime($returned_time);
+
+
+    /*     * ***Start Query***** */
+    $query = "SELECT
+                    n.nid AS nid,
+                    n.type AS type,
+                    site.entity_id AS site_entity_id,(SELECT n.title FROM node n where n.nid = site.entity_id) as site_title,
+                    cst.entity_id AS cst_entity_id,(SELECT n.title FROM node n where n.nid = cst.entity_id) as cst_title,
+                    dev.entity_id AS dev_entity_id,(SELECT n.title FROM node n where n.nid = dev.entity_id) as device_title,
+                    log.entity_id AS log_entity_id
+                  FROM {node} n LEFT OUTER JOIN {field_data_field_parent_company} site
+                    ON n.nid = site.field_parent_company_target_id 
+                    LEFT OUTER JOIN {field_data_field_parent_site} cst
+                    ON site.entity_id = cst.field_parent_site_target_id 
+                    LEFT OUTER JOIN {field_data_field_charging_station} dev
+                    ON cst.entity_id = dev.field_charging_station_target_id 
+                    LEFT OUTER JOIN {field_data_field_device} log
+                    ON dev.entity_id=log.field_device_target_id
+                    LEFT OUTER JOIN {field_data_field_acquired} acq
+                    ON log.entity_id = acq.entity_id
+                    LEFT OUTER JOIN {field_data_field_returned} ret
+                    ON log.entity_id = ret.entity_id 
+                    WHERE n.nid= $company_id";
+
+    if ($site_id != 0) {
+        $query .= " AND site.entity_id = $site_id";
+    }
+    if ($cst_id != 0) {
+        $query .= " AND cst.entity_id = $cst_id";
+    }
+    $query .=" AND acq.field_acquired_value >= $acquired_time_val";
+    $query .=" AND ret.field_returned_value <= $returned_time_val";
+    $query .=" AND log.entity_id !=''";
+
+    $results = db_query($query)->fetchAll();
+
+    /*     * ****End Query******* */
+
+    return theme('aitico-logs-view', array(
+                'company_name' => $company_name,
+                'site_name' => $site_name,
+                'cst_name' => $cst_name,
+                'date_range' => $date_range,
+                'log_results' => $results
+            ));
+}
+
+/*
+ * Implementation of admin action logo
+ * 
+ */
+
+function get_logo_admin_action() {
+    return theme('aitico-admin-action-logo', array());
+}
+
+/*
+ * Implementation of admin page callback
+ */
+
+function aitico_core_help_page() {
+    // THIS IS DUMMY CODE TO DEMO DRUPAL AJAX HELPERS
+    $ajaxLink = l(t('Click me for Ajax!'), 'help/ajax', array('attributes' => array('class' => array('use-ajax'))));
+    $content =
+<<<HTML
+    <div id="help-left">
+        {$ajaxLink}
+    </div>
+    <div id="help-right">
+        <p>This will be ajax replaced when you click on the link to the left.</p>
+    </div>
+HTML;
+
+    return $content;
+}
+
+function aitico_core_help_ajax() {
+    // THIS IS DUMMY CODE TO DEMO DRUPAL AJAX HELPERS
+
+    $content =
+<<<HTML
+    <p>The text is now replaced!</p>
+HTML;
+
+    ajax_deliver(array('#type' => 'ajax', '#commands' => array(
+        ajax_command_html('#help-right', $content),
+        ajax_command_alert('Success'),
+    )));
+}
+
+/*
+ * Implementation of admin page callback
+ */
+
+function aitio_core_rent_page() {
+    return '';
+}
+
+/**
+ * Get a site id list by a company
+ * @param int $nid
+ * @return type 
+ */
+function get_all_child_site_of_a_company($nid) {
+    $type = "site";
+    $sql = "SELECT n.nid FROM {node} n LEFT JOIN  {field_data_field_parent_company} pc ON  pc.entity_id = n.nid 
+            WHERE pc.field_parent_company_target_id = :nid AND n.type = :type";
+    $site_list = db_query($sql, array(':nid' => $nid, ':type' => $type))->fetchAll();
+    return $site_list;
+}
+
+/**
+ * Get CST id list by a company id
+ * @param type $site_id_lists
+ * @return type 
+ */
+function get_all_charging_station_of_a_company($site_id_lists) {
+    $type = "charging_station";
+    $sql = "SELECT n.nid FROM {node} n LEFT JOIN  {field_data_field_parent_site} ps ON  ps.entity_id = n.nid 
+            WHERE ps.field_parent_site_target_id IN($site_id_lists) AND n.type = :type";
+    $charging_station_list = db_query($sql, array(':type' => $type))->fetchAll();
+    return $charging_station_list;
+}
+
+/**
+ * Get CST id list by a site id
+ * @param type $site_id
+ * @return type 
+ */
+function get_all_charging_station_of_a_site($site_id) {
+    $type = "charging_station";
+    $sql = "SELECT n.nid FROM {node} n LEFT JOIN  {field_data_field_parent_site} ps ON  ps.entity_id = n.nid 
+            WHERE ps.field_parent_site_target_id = :site_id AND n.type = :type";
+    $charging_station_list = db_query($sql, array(':site_id' => $site_id, ':type' => $type))->fetchAll();
+    return $charging_station_list;
+}
+
+/*
+ * Implementation of updating admin action in right block based on
+ * clicking on left block 
+ * 
+ */
+
+function update_admin_action() {
+    $company_id = $_POST['company_id'];
+    $site_id = $_POST['site_id'];
+    $cst_id = $_POST['cst_id'];
+    $node_type = $_POST['node_type'];
+    $output = '';
+
+    if ($node_type == 'company') {
+        $edit_node = node_load($company_id);
+    } else if ($node_type == 'site') {
+        $edit_node = node_load($site_id);
+    } else if ($node_type == 'charging_station') {
+        $edit_node = node_load($cst_id);
+    }
+
+    $admin_action_edit = edit_admin_action($edit_node);
+    $admin_action_files = get_files_admin_action();
+    $admin_action_file_admin = admin_file_admin_action();
+    $admin_action_logs = get_logs_admin_action($company_id, $site_id, $cst_id);
+    $admin_action_users = get_users_admin_action($company_id, $site_id);
+    $admin_action_logo = get_logo_admin_action();
+
+    $output.= $admin_action_edit;
+    $output.= $admin_action_files;
+    $output.= $admin_action_file_admin;
+    $output.= $admin_action_logs;
+    $output.= $admin_action_users;
+    $output.= $admin_action_logo;
+
+    print $output;
+}

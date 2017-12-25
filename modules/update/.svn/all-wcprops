@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/update
+END
+update.module
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/update/update.module
+END
+update.install
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/update/update.install
+END
+update-rtl.css
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/update/update-rtl.css
+END
+update.css
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/update/update.css
+END
+update.settings.inc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/update/update.settings.inc
+END
+update.info
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/update/update.info
+END
+update.compare.inc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/update/update.compare.inc
+END
+update.api.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/update/update.api.php
+END
+update.test
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/update/update.test
+END
+update.fetch.inc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/update/update.fetch.inc
+END
+update.authorize.inc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/update/update.authorize.inc
+END
+update.manager.inc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/update/update.manager.inc
+END
+update.report.inc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/update/update.report.inc
+END

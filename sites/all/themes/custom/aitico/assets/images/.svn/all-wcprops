@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/aitico-drupal/!svn/ver/65/trunk/src/sites/all/themes/custom/aitico/assets/images
+END
+back_disabled.png
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/aitico-drupal/!svn/ver/12/trunk/src/sites/all/themes/custom/aitico/assets/images/back_disabled.png
+END
+back_enabled.png
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/aitico-drupal/!svn/ver/12/trunk/src/sites/all/themes/custom/aitico/assets/images/back_enabled.png
+END
+forward_disabled.png
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/aitico-drupal/!svn/ver/12/trunk/src/sites/all/themes/custom/aitico/assets/images/forward_disabled.png
+END
+sort_desc_disabled.png
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/aitico-drupal/!svn/ver/12/trunk/src/sites/all/themes/custom/aitico/assets/images/sort_desc_disabled.png
+END
+back_enabled_hover.png
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/aitico-drupal/!svn/ver/12/trunk/src/sites/all/themes/custom/aitico/assets/images/back_enabled_hover.png
+END
+sort_asc.png
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/aitico-drupal/!svn/ver/12/trunk/src/sites/all/themes/custom/aitico/assets/images/sort_asc.png
+END
+forward_enabled.png
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/aitico-drupal/!svn/ver/12/trunk/src/sites/all/themes/custom/aitico/assets/images/forward_enabled.png
+END
+logo.png
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/aitico-drupal/!svn/ver/65/trunk/src/sites/all/themes/custom/aitico/assets/images/logo.png
+END
+forward_enabled_hover.png
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/aitico-drupal/!svn/ver/12/trunk/src/sites/all/themes/custom/aitico/assets/images/forward_enabled_hover.png
+END
+sort_both.png
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/aitico-drupal/!svn/ver/12/trunk/src/sites/all/themes/custom/aitico/assets/images/sort_both.png
+END
+sort_asc_disabled.png
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/aitico-drupal/!svn/ver/12/trunk/src/sites/all/themes/custom/aitico/assets/images/sort_asc_disabled.png
+END
+sort_desc.png
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/aitico-drupal/!svn/ver/12/trunk/src/sites/all/themes/custom/aitico/assets/images/sort_desc.png
+END

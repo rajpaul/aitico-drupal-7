@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/aitico-drupal/!svn/ver/441/trunk/src/sites/all/themes/custom/aitico/templates
+END
+status-messages.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/aitico-drupal/!svn/ver/441/trunk/src/sites/all/themes/custom/aitico/templates/status-messages.tpl.php
+END
+page.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/aitico-drupal/!svn/ver/325/trunk/src/sites/all/themes/custom/aitico/templates/page.tpl.php
+END
+node--files.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/aitico-drupal/!svn/ver/295/trunk/src/sites/all/themes/custom/aitico/templates/node--files.tpl.php
+END
+block--navigation.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/aitico-drupal/!svn/ver/82/trunk/src/sites/all/themes/custom/aitico/templates/block--navigation.tpl.php
+END

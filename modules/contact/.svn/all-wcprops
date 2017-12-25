@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/contact
+END
+contact.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/contact/contact.test
+END
+contact.admin.inc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/contact/contact.admin.inc
+END
+contact.module
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/contact/contact.module
+END
+contact.install
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/contact/contact.install
+END
+contact.pages.inc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/contact/contact.pages.inc
+END
+contact.info
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/contact/contact.info
+END

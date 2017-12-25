@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_user
+END
+i18n_user.info
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_user/i18n_user.info
+END
+i18n_user.module
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_user/i18n_user.module
+END
+i18n_user.install
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_user/i18n_user.install
+END

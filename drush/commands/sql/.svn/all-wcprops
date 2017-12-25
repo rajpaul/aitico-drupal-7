@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/commands/sql
+END
+sql.drush.inc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/commands/sql/sql.drush.inc
+END
+sync.sql.inc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/commands/sql/sync.sql.inc
+END

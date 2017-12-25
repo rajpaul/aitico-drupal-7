@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/aitico-drupal/!svn/ver/3/trunk/src/includes/database
+END
+select.inc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/aitico-drupal/!svn/ver/3/trunk/src/includes/database/select.inc
+END
+prefetch.inc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/aitico-drupal/!svn/ver/3/trunk/src/includes/database/prefetch.inc
+END
+schema.inc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/aitico-drupal/!svn/ver/3/trunk/src/includes/database/schema.inc
+END
+log.inc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/aitico-drupal/!svn/ver/3/trunk/src/includes/database/log.inc
+END
+database.inc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/aitico-drupal/!svn/ver/3/trunk/src/includes/database/database.inc
+END
+query.inc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/aitico-drupal/!svn/ver/3/trunk/src/includes/database/query.inc
+END

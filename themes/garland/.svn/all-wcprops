@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/aitico-drupal/!svn/ver/3/trunk/src/themes/garland
+END
+comment.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/aitico-drupal/!svn/ver/3/trunk/src/themes/garland/comment.tpl.php
+END
+style-rtl.css
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/aitico-drupal/!svn/ver/3/trunk/src/themes/garland/style-rtl.css
+END
+theme-settings.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/aitico-drupal/!svn/ver/3/trunk/src/themes/garland/theme-settings.php
+END
+fix-ie-rtl.css
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/aitico-drupal/!svn/ver/3/trunk/src/themes/garland/fix-ie-rtl.css
+END
+style.css
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/aitico-drupal/!svn/ver/3/trunk/src/themes/garland/style.css
+END
+fix-ie.css
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/aitico-drupal/!svn/ver/3/trunk/src/themes/garland/fix-ie.css
+END
+node.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/aitico-drupal/!svn/ver/3/trunk/src/themes/garland/node.tpl.php
+END
+page.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/aitico-drupal/!svn/ver/3/trunk/src/themes/garland/page.tpl.php
+END
+screenshot.png
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/aitico-drupal/!svn/ver/3/trunk/src/themes/garland/screenshot.png
+END
+maintenance-page.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/aitico-drupal/!svn/ver/3/trunk/src/themes/garland/maintenance-page.tpl.php
+END
+template.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/aitico-drupal/!svn/ver/3/trunk/src/themes/garland/template.php
+END
+garland.info
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/aitico-drupal/!svn/ver/3/trunk/src/themes/garland/garland.info
+END
+logo.png
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/aitico-drupal/!svn/ver/3/trunk/src/themes/garland/logo.png
+END
+print.css
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/aitico-drupal/!svn/ver/3/trunk/src/themes/garland/print.css
+END

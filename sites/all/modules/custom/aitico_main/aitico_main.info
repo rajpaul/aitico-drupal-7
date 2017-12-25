@@ -1,0 +1,10 @@
+name = Aitico Application
+description = Aitico Application
+package = aitico
+version = 1.0
+core = 7.x
+
+dependencies[] = aitico_core
+dependencies[] = aitico_ui
+dependencies[] = aitico_api
+dependencies[] = aitico_job

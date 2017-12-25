@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/commands/pm
+END
+info.pm.inc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/commands/pm/info.pm.inc
+END
+updatecode.pm.inc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/commands/pm/updatecode.pm.inc
+END
+pm.drush.inc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/commands/pm/pm.drush.inc
+END
+download.pm.inc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/commands/pm/download.pm.inc
+END

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_translation
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_translation/README.txt
+END
+i18n_translation.api.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_translation/i18n_translation.api.php
+END
+i18n_translation.admin.inc
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_translation/i18n_translation.admin.inc
+END
+i18n_translation.module
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_translation/i18n_translation.module
+END
+i18n_translation.install
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_translation/i18n_translation.install
+END
+i18n_translation.pages.inc
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_translation/i18n_translation.pages.inc
+END
+i18n_translation.inc
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_translation/i18n_translation.inc
+END
+i18n_translation.info
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_translation/i18n_translation.info
+END

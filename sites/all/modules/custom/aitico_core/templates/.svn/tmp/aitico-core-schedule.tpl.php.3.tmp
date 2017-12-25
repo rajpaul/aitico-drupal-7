@@ -1,0 +1,82 @@
+<div class="schedule-view">
+    <h2><?php print t('Scheduled file updates'); ?>: 
+        <span class="blue"><?php print t($company_title); ?> - <?php print t($site_title); ?> - <?php print t($cst_title); ?></span></h2>
+    <label class="select-group" for="group-select"><?php print t('Select group'); ?></label>       
+    <select id="group-select">
+        <?php if (isset($group_lists)): ?>
+
+            <?php            
+            $initial_group = array_shift(array_values($group_lists));
+            $initial_group_id = $initial_group->nid;
+            $slot_number = count(get_all_slot_of_a_group($initial_group_id));
+            ?>
+            <?php foreach ($group_lists as $group): ?>
+                <option value="<?php print $group->nid; ?>"><?php print t($group->title); ?></option>
+            <?php endforeach; ?>
+    <?php endif; ?>
+    </select>
+    <?php foreach ($group_lists as $group): ?>
+        <a style="display:none;" id="update_cst_group_<?php print $group->nid; ?>" href="/administration/schedule/group-view/<?php print $group->nid; ?>" class="use-ajax"></a>
+        <a style="display:none;" id="add_schedule_update_<?php print $group->nid; ?>" href="/administration/schedule/add/<?php print $group->nid; ?>" class="use-ajax"></a>
+    <?php endforeach; ?>
+    <table class="table table-bordered table-hover" id="schedule-table">
+        <thead>
+            <tr>
+                <th class="span4"><?php print t('Date of the update'); ?></th>
+                <?php for ($i = 1; $i <= $slot_number; $i++): ?>
+                <th><?php print t('Slot ') . $i; ?></th>
+                <?php endfor; ?>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($schedule_info as $key => $val): ?>
+                <tr nid="<?php print $key;?>" id="schedule_<?php echo $key;?>" class="schedule_files">
+                    <?php
+                    list($date, $time) = explode('|', date('d/m/Y|H:i', $val['schedule_time']));
+                    ?>
+                    <td>
+                        <input  type="text" class="input-small schedule-date" id="schedule-date-<?php print $key;?>" value="<?php print $date; ?>"/>
+                        <div class="bootstrap-timepicker">
+                         <input type="text" class="input-small schedule-time" id="schedule-time-<?php print $key;?>" value="<?php print $time; ?>"/></div>
+                    <a href="/update/schedule/<?php print $key; ?>" class="btn btn-grey save-schedule" style="display:none;" id="save-schedule-<?php echo $key;?>"><?php print t('Save'); ?></a>        
+                    </td>
+                    <?php foreach ($val['files_info'] as $row): ?>
+                        <td> <?php
+                        $file_schedule_id = $key;
+                        $file_slot_id = $row->parent_slot_id;
+//                        $file_slot_node = node_load($file_slot_id);
+//                        $slot_file_type = $file_slot_node->field_file_type['und'][0]['value'];
+                        $file_node = get_files_node($file_slot_id, FILE_TYPE_CODE_SCHEDULE, $file_schedule_id);
+                        $files_form = get_aitico_node_form('files', $file_slot_id, $file_node);
+                        $form = render($files_form);
+                        print $form;
+                        ?>
+                        </td>
+                    <?php endforeach; ?>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+    
+         <a data-toggle="modal" class="btn btn-grey schedule-remove-url" role="button" href="#delete_schedule" id="schedule_remove_url" nid="" ><?php print t("Remove selected schedule"); ?></a>
+        <div class="btn btn-primary" id="add_schedule_update"><?php print t("Add scheduled update"); ?></div>
+</div><!--/log-->
+
+ <!-- start of #deleteSchedule-content -->
+        <div id="delete_schedule" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="deleteUserLabel" aria-hidden="true">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+            <h3 id="deleteUserLabel"><?php print t('Delete Schedule');?></h3>
+          </div>
+          <div class="modal-body" id="modal_text">
+            <center>
+                <h1 class="red"><?php print t('Action is not reversable') ; ?></h1>
+                <p><?php print t('Are you sure you want to delete schedule?') ; ?></p>
+            </center>
+          </div>
+          <div class="modal-footer">
+            <button id="schedule-cancel-button" class="btn btn-grey schedule-cancel-btn" data-dismiss="modal" aria-hidden="true"><?php print t('Cancel');?></button>
+            <button id="schedule-delete-button" class="btn btn-danger schedule-delete-btn" data-schedule-id=""  aria-hidden="true"><?php print t('Delete schedule');?></button>
+          </div>
+        </div>
+        <!-- #deleteUser-content -->

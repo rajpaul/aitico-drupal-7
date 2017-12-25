@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/aitico-drupal/!svn/ver/652/trunk/src/sites/all/modules/custom/aitico_core
+END
+aitico_core.module
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/aitico-drupal/!svn/ver/646/trunk/src/sites/all/modules/custom/aitico_core/aitico_core.module
+END
+aitico_core.install
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/aitico-drupal/!svn/ver/12/trunk/src/sites/all/modules/custom/aitico_core/aitico_core.install
+END
+aitico_core.info
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/aitico-drupal/!svn/ver/567/trunk/src/sites/all/modules/custom/aitico_core/aitico_core.info
+END

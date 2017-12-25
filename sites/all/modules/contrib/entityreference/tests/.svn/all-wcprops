@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/aitico-drupal/!svn/ver/18/trunk/src/sites/all/modules/contrib/entityreference/tests
+END
+entityreference.taxonomy.test
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/aitico-drupal/!svn/ver/18/trunk/src/sites/all/modules/contrib/entityreference/tests/entityreference.taxonomy.test
+END
+entityreference.handlers.test
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/aitico-drupal/!svn/ver/18/trunk/src/sites/all/modules/contrib/entityreference/tests/entityreference.handlers.test
+END
+entityreference.admin.test
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/aitico-drupal/!svn/ver/18/trunk/src/sites/all/modules/contrib/entityreference/tests/entityreference.admin.test
+END

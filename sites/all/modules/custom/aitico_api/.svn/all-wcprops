@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/aitico-drupal/!svn/ver/653/trunk/src/sites/all/modules/custom/aitico_api
+END
+aitico_api.info
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/aitico-drupal/!svn/ver/403/trunk/src/sites/all/modules/custom/aitico_api/aitico_api.info
+END
+aitico_api.module
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/aitico-drupal/!svn/ver/651/trunk/src/sites/all/modules/custom/aitico_api/aitico_api.module
+END
+aitico_api.install
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/aitico-drupal/!svn/ver/12/trunk/src/sites/all/modules/custom/aitico_api/aitico_api.install
+END

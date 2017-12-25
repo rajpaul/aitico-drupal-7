@@ -1,0 +1,33 @@
+<div id="tab-logs" class="tab-pane">
+    <p><?php print t('Select time period to browse logs.'); ?></p>
+    <form action="administration/log/<?php print $company_id;?>/<?php print $site_id;?>/<?php print $cst_id;?>" target="_new">
+        <div class="input-prepend input-append">
+            <span class="add-on"><i class="icon-calendar"></i></span>
+            <input class="span9" type="text" name="date-range-picker" id="id-date-range-picker-1" />
+            <input type="submit" id="search_logs" class="btn btn-primary btn-small" value="<?php print t("Search logs");?>">
+        </div>
+    </form>
+</div>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            
+            $('#search_logs').attr('disabled','disabled');
+            
+            $('#id-date-range-picker-1').daterangepicker({
+                ranges: {
+                    'Today': ['today', 'today'],
+                    'Yesterday': ['yesterday', 'yesterday'],
+                    'Last 7 Days': [Date.today().add({ days: -6 }), 'today']                 
+                  
+                }
+            },
+            function(start, end) {
+                $('#search_logs').removeAttr('disabled');
+            }
+            );
+
+        });
+    })(jQuery);
+</script>

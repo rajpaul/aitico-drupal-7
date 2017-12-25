@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/aitico-drupal/!svn/ver/18/trunk/src/sites/all/modules/contrib/ctools/page_manager/plugins/tasks
+END
+blog.inc
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/aitico-drupal/!svn/ver/18/trunk/src/sites/all/modules/contrib/ctools/page_manager/plugins/tasks/blog.inc
+END
+page.admin.inc
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/aitico-drupal/!svn/ver/18/trunk/src/sites/all/modules/contrib/ctools/page_manager/plugins/tasks/page.admin.inc
+END
+user_edit.inc
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/aitico-drupal/!svn/ver/18/trunk/src/sites/all/modules/contrib/ctools/page_manager/plugins/tasks/user_edit.inc
+END
+search.inc
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/aitico-drupal/!svn/ver/18/trunk/src/sites/all/modules/contrib/ctools/page_manager/plugins/tasks/search.inc
+END
+poll.inc
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/aitico-drupal/!svn/ver/18/trunk/src/sites/all/modules/contrib/ctools/page_manager/plugins/tasks/poll.inc
+END
+user_view.inc
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/aitico-drupal/!svn/ver/18/trunk/src/sites/all/modules/contrib/ctools/page_manager/plugins/tasks/user_view.inc
+END
+contact_user.inc
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/aitico-drupal/!svn/ver/18/trunk/src/sites/all/modules/contrib/ctools/page_manager/plugins/tasks/contact_user.inc
+END
+node_edit.inc
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/aitico-drupal/!svn/ver/18/trunk/src/sites/all/modules/contrib/ctools/page_manager/plugins/tasks/node_edit.inc
+END
+page.inc
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/aitico-drupal/!svn/ver/18/trunk/src/sites/all/modules/contrib/ctools/page_manager/plugins/tasks/page.inc
+END
+comment_reply.inc
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/aitico-drupal/!svn/ver/18/trunk/src/sites/all/modules/contrib/ctools/page_manager/plugins/tasks/comment_reply.inc
+END
+contact_site.inc
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/aitico-drupal/!svn/ver/18/trunk/src/sites/all/modules/contrib/ctools/page_manager/plugins/tasks/contact_site.inc
+END
+node_view.inc
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/aitico-drupal/!svn/ver/18/trunk/src/sites/all/modules/contrib/ctools/page_manager/plugins/tasks/node_view.inc
+END
+blog_user.inc
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/aitico-drupal/!svn/ver/18/trunk/src/sites/all/modules/contrib/ctools/page_manager/plugins/tasks/blog_user.inc
+END
+term_view.inc
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/aitico-drupal/!svn/ver/18/trunk/src/sites/all/modules/contrib/ctools/page_manager/plugins/tasks/term_view.inc
+END

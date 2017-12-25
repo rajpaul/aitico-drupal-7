@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/aggregator/tests
+END
+aggregator_test.info
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/aggregator/tests/aggregator_test.info
+END
+aggregator_test_atom.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/aggregator/tests/aggregator_test_atom.xml
+END
+aggregator_test_rss091.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/aggregator/tests/aggregator_test_rss091.xml
+END
+aggregator_test.module
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/aggregator/tests/aggregator_test.module
+END

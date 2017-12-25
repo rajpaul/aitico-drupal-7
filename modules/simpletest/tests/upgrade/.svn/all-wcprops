@@ -1,0 +1,227 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade
+END
+upgrade.translatable.test
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/upgrade.translatable.test
+END
+upgrade.user.test
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/upgrade.user.test
+END
+drupal-6.trigger.database.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/drupal-6.trigger.database.php
+END
+drupal-7.filled.minimal.database.php.gz
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/drupal-7.filled.minimal.database.php.gz
+END
+drupal-6.menu.database.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/drupal-6.menu.database.php
+END
+upgrade.upload.test
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/upgrade.upload.test
+END
+drupal-6.user-no-password-token.database.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/drupal-6.user-no-password-token.database.php
+END
+upgrade.node.test
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/upgrade.node.test
+END
+upgrade.filter.test
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/upgrade.filter.test
+END
+upgrade.forum.test
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/upgrade.forum.test
+END
+drupal-7.bare.minimal.database.php.gz
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/drupal-7.bare.minimal.database.php.gz
+END
+upgrade.test
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/upgrade.test
+END
+drupal-7.field.database.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/drupal-7.field.database.php
+END
+upgrade.comment.test
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/upgrade.comment.test
+END
+drupal-6.comments.database.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/drupal-6.comments.database.php
+END
+upgrade.menu.test
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/upgrade.menu.test
+END
+drupal-6.forum.database.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/drupal-6.forum.database.php
+END
+update.user.test
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/update.user.test
+END
+drupal-6.user-password-token.database.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/drupal-6.user-password-token.database.php
+END
+update.aggregator.test
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/update.aggregator.test
+END
+drupal-6.filled.database.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/drupal-6.filled.database.php
+END
+drupal-6.locale.database.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/drupal-6.locale.database.php
+END
+drupal-6.duplicate-permission.database.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/drupal-6.duplicate-permission.database.php
+END
+upgrade.taxonomy.test
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/upgrade.taxonomy.test
+END
+update.field.test
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/update.field.test
+END
+drupal-7.trigger.database.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/drupal-7.trigger.database.php
+END
+drupal-7.filled.standard_all.database.php.gz
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/drupal-7.filled.standard_all.database.php.gz
+END
+drupal-6.bare.database.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/drupal-6.bare.database.php
+END
+drupal-6.translatable.database.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/drupal-6.translatable.database.php
+END
+drupal-7.bare.standard_all.database.php.gz
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/drupal-7.bare.standard_all.database.php.gz
+END
+update.trigger.test
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/update.trigger.test
+END
+upgrade.locale.test
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/upgrade.locale.test
+END
+drupal-7.aggregator.database.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/drupal-7.aggregator.database.php
+END
+drupal-6.upload.database.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/drupal-6.upload.database.php
+END
+upgrade.trigger.test
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/upgrade.trigger.test
+END
+drupal-6.node_type_broken.database.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/drupal-6.node_type_broken.database.php
+END
+upgrade.poll.test
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/simpletest/tests/upgrade/upgrade.poll.test
+END

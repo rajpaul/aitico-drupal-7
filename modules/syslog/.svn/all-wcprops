@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/syslog
+END
+syslog.info
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/syslog/syslog.info
+END
+syslog.test
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/syslog/syslog.test
+END
+syslog.module
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/syslog/syslog.module
+END
+syslog.install
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/syslog/syslog.install
+END

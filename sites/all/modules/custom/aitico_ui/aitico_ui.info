@@ -1,0 +1,9 @@
+name = Aitico User Interface
+description = Aitico User Interface
+package = aitico
+version = 1.0
+core = 7.x
+
+stylesheets[all][] = assets/css/aitico_ui.css
+
+scripts[] = assets/js/aitico_ui.js

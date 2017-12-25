@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/aitico-drupal/!svn/ver/76/trunk/src/sites/all/themes/contrib/zen/zen-internals
+END
+zen.drush.inc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/aitico-drupal/!svn/ver/76/trunk/src/sites/all/themes/contrib/zen/zen-internals/zen.drush.inc
+END
+template.theme-registry.inc
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/aitico-drupal/!svn/ver/76/trunk/src/sites/all/themes/contrib/zen/zen-internals/template.theme-registry.inc
+END
+template.zen.inc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/aitico-drupal/!svn/ver/76/trunk/src/sites/all/themes/contrib/zen/zen-internals/template.zen.inc
+END
+screenshot.png
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/aitico-drupal/!svn/ver/76/trunk/src/sites/all/themes/contrib/zen/zen-internals/screenshot.png
+END

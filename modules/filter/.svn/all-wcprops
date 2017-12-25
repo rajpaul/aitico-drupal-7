@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/filter
+END
+filter.api.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/filter/filter.api.php
+END
+filter.test
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/filter/filter.test
+END
+filter.admin.inc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/filter/filter.admin.inc
+END
+filter.admin.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/filter/filter.admin.js
+END
+filter.module
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/filter/filter.module
+END
+filter.install
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/filter/filter.install
+END
+filter.pages.inc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/filter/filter.pages.inc
+END
+filter.css
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/filter/filter.css
+END
+filter.info
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/filter/filter.info
+END
+filter.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/filter/filter.js
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/tests/resources
+END
+example.profile
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/tests/resources/example.profile
+END
+queue_script.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/tests/resources/queue_script.php
+END
+create_node_types.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/aitico-drupal/!svn/ver/8/trunk/src/drush/tests/resources/create_node_types.php
+END

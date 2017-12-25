@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/aitico-drupal/!svn/ver/3/trunk/src/includes/database/sqlite
+END
+select.inc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/aitico-drupal/!svn/ver/3/trunk/src/includes/database/sqlite/select.inc
+END
+schema.inc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/aitico-drupal/!svn/ver/3/trunk/src/includes/database/sqlite/schema.inc
+END
+database.inc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/aitico-drupal/!svn/ver/3/trunk/src/includes/database/sqlite/database.inc
+END
+query.inc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/aitico-drupal/!svn/ver/3/trunk/src/includes/database/sqlite/query.inc
+END
+install.inc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/aitico-drupal/!svn/ver/3/trunk/src/includes/database/sqlite/install.inc
+END

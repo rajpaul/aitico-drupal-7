@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/dashboard
+END
+dashboard.info
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/dashboard/dashboard.info
+END
+dashboard.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/dashboard/dashboard.js
+END
+dashboard.api.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/dashboard/dashboard.api.php
+END
+dashboard.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/dashboard/dashboard.test
+END
+dashboard.module
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/dashboard/dashboard.module
+END
+dashboard.install
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/dashboard/dashboard.install
+END
+dashboard-rtl.css
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/dashboard/dashboard-rtl.css
+END
+dashboard.css
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/aitico-drupal/!svn/ver/3/trunk/src/modules/dashboard/dashboard.css
+END

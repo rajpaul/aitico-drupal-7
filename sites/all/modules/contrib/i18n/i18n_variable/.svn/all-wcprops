@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_variable
+END
+i18n_variable.info
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_variable/i18n_variable.info
+END
+i18n_variable.class.inc
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_variable/i18n_variable.class.inc
+END
+i18n_variable.variable.inc
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_variable/i18n_variable.variable.inc
+END
+i18n_variable.test
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_variable/i18n_variable.test
+END
+i18n_variable.module
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_variable/i18n_variable.module
+END
+i18n_variable.install
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/aitico-drupal/!svn/ver/230/trunk/src/sites/all/modules/contrib/i18n/i18n_variable/i18n_variable.install
+END
